@@ -1,9 +1,15 @@
 #root {
+  display: flex; /* Użycie flexbox do zarządzania układem */
+  flex-direction: column; /* Elementy wewnątrz układane w kolumnie */
+  align-items: center; /* Centruje zawartość poziomo */
+  justify-content: center; /* Centruje zawartość pionowo */
   width: 100%; /* Rozciąga na pełną szerokość */
-  margin: 0; /* Usuwa automatyczne wyśrodkowanie */
+  height: 100%; /* Rozciąga na pełną wysokość */
+  margin: 0; /* Usuwa automatyczne marginesy */
   padding: 0; /* Usuwa domyślny padding */
-  text-align: left; /* (opcjonalnie) zmiana na domyślne wyrównanie */
+  text-align: left; /* Domyślne wyrównanie tekstu */
 }
+
 
 .logo {
   height: 6em;
