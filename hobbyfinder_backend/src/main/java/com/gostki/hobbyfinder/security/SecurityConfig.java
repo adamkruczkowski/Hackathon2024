@@ -115,7 +115,7 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfiguration(){
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(frontendURL, "http://192.168.100.109:3000", "http://localhost:3000"));
+        configuration.setAllowedOrigins(List.of(frontendURL, "http://192.168.100.109:5174", "http://localhost:5174", "http://localhost:3000"));
         configuration.addAllowedHeader("*");
         configuration.addAllowedMethod("*");
         configuration.setAllowCredentials(true);
