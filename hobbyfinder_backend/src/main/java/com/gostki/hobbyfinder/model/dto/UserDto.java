@@ -18,6 +18,8 @@ public class UserDto {
 
     private String role;
 
+    private String personality;
+
     public UserDto(){
 
     }
@@ -28,7 +30,7 @@ public class UserDto {
         this.email = user.getLogin();
         //this.password = user.getPassword();
         this.roles = new String[] {user.getRoles()};
-
+        this.personality = user.getPersonality();
         role = user.getRoles();
 
     }

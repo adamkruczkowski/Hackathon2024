@@ -7,11 +7,15 @@ import UserPage from './components/UserPage';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import PageWithNavbar from './components/PageWithNavbar';
+import Login from './components/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// custom hook to get the current pathname in React
+
 
 function App() {
 
-  const [user, setUser] = useState('ROLE_USER');
+const [user, setUser] = useState('ROLE_USER');
 
   const getUser = async() => {
     try {
@@ -38,6 +42,7 @@ function App() {
   useEffect(()=>{
     getUser();
   }, []);
+
   return (
     <Router>
       <div className="App">
@@ -45,9 +50,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/me" element={<UserPage userIn={user}/>} />
+          <Route path="/me" element={<UserPage />} />
           <Route path="*" element={<NotFound />} />
 		  <Route path="/f" element={<PageWithNavbar userIn={user}/>} />
+		  <Route path="/login" element={<Login/>} />
         </Routes>
         <Footer />
       </div>

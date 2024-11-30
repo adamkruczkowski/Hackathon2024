@@ -24,6 +24,7 @@ public class User {
 
     private String password;
 
+    private String personality;
 
     private String role;
 
@@ -85,4 +86,14 @@ public class User {
     public void setRoles(String role) {
         this.role = role;
     }
+
+    public String getPersonality() {
+        return personality;
+    }
+
+    public void setPersonality(String p) {
+        this.personality = p;
+    }
+
+
 }
