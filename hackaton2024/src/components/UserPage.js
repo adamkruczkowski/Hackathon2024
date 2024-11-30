@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { getUser } from '../App';
 
-const UserPage = () => {
+const UserPage = ({userIn}) => {
   return (
-    <div className="pt-40">UserPage</div>
+    <div className="pt-40">{userIn.name}</div>
   )
 }
 

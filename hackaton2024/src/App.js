@@ -41,13 +41,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar/>
+        <Navbar user={user}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/me" element={<UserPage/>} />
+          <Route path="/me" element={<UserPage userIn={user}/>} />
           <Route path="*" element={<NotFound />} />
-		  <Route path="/f" element={<PageWithNavbar/>} />
+		  <Route path="/f" element={<PageWithNavbar userIn={user}/>} />
         </Routes>
         <Footer />
       </div>

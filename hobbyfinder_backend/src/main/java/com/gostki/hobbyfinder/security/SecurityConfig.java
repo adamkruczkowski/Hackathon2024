@@ -89,7 +89,7 @@ public class SecurityConfig {
                         .permitAll()
                         .loginProcessingUrl("/login")
                         .permitAll()
-                        .defaultSuccessUrl(frontendURL+ ":5174", true)
+                        .defaultSuccessUrl(frontendURL+ ":3000", true)
                        
                 ).logout(
                     logout -> logout

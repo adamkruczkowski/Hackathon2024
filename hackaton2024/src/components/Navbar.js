@@ -22,7 +22,7 @@ const NavItemMobile = ({ icon, to, onClick }) => (
   </li>
 );
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const [nav, setNav] = useState(false);
  
   const handleNav = useCallback(() => {
@@ -31,12 +31,14 @@ const Navbar = () => {
 
   return (
     <div className='fixed bg-white flex justify-between items-center mx-auto w-full z-10 pr-4 pl-12 border-b'>
-      <h1 className="pl-4  bg-clip-text text-4xl font-black">Hobby Finder</h1>
+      <h1 className="pl-4  bg-clip-text text-4xl font-black">Hobby Finder { user.name }</h1>
       <ul /**/className='hidden md:flex gap-2 rounded-xl bg-white m-2'>
         <NavItem icon={<IoMdHome style={{ color: 'black' }} size={20} />} to="/" />
         <NavItem icon={<IoMdListBox style={{ color: 'black' }} size={20} />} to="/dashboard" />
         <NavItem icon={<RiUserFill style={{ color: 'black' }} size={20} />} to="/me" />
         <NavItem icon={<IoLogOut style={{ color: 'black' }} size={20} />} to={SERVER_URL+"/logout"}/>
+        <NavItem icon={<IoMdListBox style={{ color: 'black' }} size={20} />} to="/f"/>
+
       </ul>
       <div onClick={handleNav} className='md:hidden z-10 m-2 rounded-xl bg-white border border-gray-500 hover:scale-90 duration-300 p-4'>
         {nav ? <AiOutlineClose style={{ color: 'black' }} size={20} /> : <AiOutlineMenu style={{ color: 'black' }} size={20} />}
