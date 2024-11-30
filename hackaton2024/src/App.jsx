@@ -5,6 +5,8 @@ import PageWithNavbar from "./components/PageWithNavbar";
 import Login from "./components/Login"; // Komponent logowania
 import RegisterPage from "./components/RegisterPage"; // Komponent rejestracji
 import EnterPage from "./components/EnterPage"; // Komponent strony głównej
+import QuizPage from './components/QuizPage';
+
 
 function App() {
   return (
@@ -21,9 +23,13 @@ function App() {
         
         {/* Trasa dla rejestracji */}
         <Route path="/register" element={<RegisterPage />} />
+
+        <Route path="/quiz-page" element={<QuizPage />} />
+
       </Routes>
     </Router>
   );
 }
 
 export default App;
+

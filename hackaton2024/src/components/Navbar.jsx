@@ -6,13 +6,18 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom"; // Import hooka nawigacji
 
 const Navbar = () => {
-  return (
-    <Box sx={{ flexGrow: 1,
-      width: "100vw", // Zajmuje pełną szerokość ekranu
+  const navigate = useNavigate(); // Hook nawigacji
 
-     }}>
+  return (
+    <Box
+      sx={{
+        flexGrow: 1,
+        width: "100vw", // Zajmuje pełną szerokość ekranu
+      }}
+    >
       <AppBar position="static" sx={{ backgroundColor: "#1976d2", boxShadow: "none" }}>
         <Toolbar>
           <IconButton
@@ -27,7 +32,11 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: "bold" }}>
             My App
           </Typography>
-          <Button color="inherit" sx={{ textTransform: "none", fontWeight: "bold" }}>
+          <Button
+            color="inherit"
+            sx={{ textTransform: "none", fontWeight: "bold" }}
+            onClick={() => navigate("/login")} // Przejście na stronę logowania
+          >
             Login
           </Button>
           <Button
@@ -40,6 +49,7 @@ const Navbar = () => {
               padding: "5px 15px",
               marginLeft: "10px",
             }}
+            onClick={() => navigate("/register")} // Przejście na stronę rejestracji
           >
             Rejestracja
           </Button>
