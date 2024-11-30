@@ -9,7 +9,10 @@ import Box from "@mui/material/Box";
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1,
+      width: "100vw", // Zajmuje pełną szerokość ekranu
+
+     }}>
       <AppBar position="static" sx={{ backgroundColor: "#1976d2", boxShadow: "none" }}>
         <Toolbar>
           <IconButton

@@ -28,6 +28,8 @@ const ButtonPanels = () => {
         alignItems: "center",
         flexWrap: "wrap", // Dostosowuje panele do mniejszych ekranów
         padding: "20px",
+        width: "100vw", // Zajmuje pełną szerokość ekranu
+        height: "100vh", // Zajmuje pełną wysokość ekranu
       }}
     >
       {panels.map((panel, index) => (
