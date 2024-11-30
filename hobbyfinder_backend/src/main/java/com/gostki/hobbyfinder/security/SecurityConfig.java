@@ -38,10 +38,37 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+    @Value("${frontend.port}")
+    private String frontendPort;
+
+
+    public CustomFilter getCustomFilter() throws Exception {
+        CustomFilter filter= new CustomFilter ("/user", "GET");
+        filter.setAuthenticationFailureHandler((request, response, exception) -> {
+
+            System.out.println("-------------------------------e");
+            System.out.println(request.getParameter("url"));
+            System.out.println("-------------------------------e");
+
+            System.out.println("forwarding e");
+
+
+            //RequestDispatcher dd=request.getRequestDispatcher("/login?url="+request.getParameter("url"));
+
+            //dd.forward(request, response);
+
+            response.sendRedirect("/login?url="+request.getParameter("url"));
+            //System.out.println("error");
+        });
+        return filter;
+    }
+/*
+
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
     }
+*/
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -53,7 +80,7 @@ public class SecurityConfig {
                 		//.requestMatchers("/api/**").permitAll()
                 		//.requestMatchers("/error").permitAll()
                    		//.requestMatchers("/not_auth").permitAll()
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
 
                 )
                 		
