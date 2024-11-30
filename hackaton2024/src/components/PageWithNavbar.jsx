@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar"; // Import navbar z poprzedniego komponentu
 import Box from "@mui/material/Box";
 import ButtonPanels from "./ButtonPanels";
+
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -37,7 +38,9 @@ const PageWithNavbar = () => {
           backgroundColor: "#f5f5f5", // Jasne tło
         }}
       >
+
        <ButtonPanels onPanelClick={handlePanelClick} />
+
 
 
       </Box>
