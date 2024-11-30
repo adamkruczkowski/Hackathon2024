@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, ButtonBase } from "@mui/material";
 
-const ButtonPanels = () => {
+const ButtonPanels = ({ onPanelClick }) => {
   const panels = [
     {
       title: "Panel 1",
@@ -52,7 +52,7 @@ const ButtonPanels = () => {
               backgroundColor: "#e0e0e0",
             },
           }}
-          onClick={() => alert(`Kliknięto ${panel.title}`)} // Działanie przycisku
+          onClick={() => onPanelClick(panel.title)} // Wywołanie funkcji przekazanej jako prop
         >
           <img
             src={panel.img}

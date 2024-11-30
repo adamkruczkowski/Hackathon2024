@@ -5,23 +5,23 @@ import Slider from '@mui/material/Slider';
 const marks = [
   {
     value: 1,
-    label: '1',
+    label: 'Bardzo Słabo',
   },
   {
     value: 2,
-    label: '2',
+    label: 'Słabo',
   },
   {
     value: 3,
-    label: '3',
+    label: 'Średnio',
   },
   {
     value: 4,
-    label: '4',
+    label: 'Dobrze',
   },
   {
     value: 5,
-    label: '5',
+    label: 'Bardzo dobrze',
   },
 ];
 
