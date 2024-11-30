@@ -13,8 +13,13 @@ const PageWithNavbar = () => {
       <Box
         sx={{
           backgroundColor: "#ffffff",
-          minHeight: "100vh", // Ustawia wysokość strony na pełną wysokość okna
-          padding: "20px", // Dodaje odstęp dookoła tekstu
+          minHeight: "calc(100vh - 64px)", // Odejmujemy wysokość Navbar (64px domyślnie w Material-UI)
+          width: "100%", // Rozciągnięcie na całą szerokość
+          display: "flex", // Dodaje elastyczny układ
+          flexDirection: "column", // Ustawia kolumnowy układ
+          justifyContent: "center", // Wyśrodkowanie w pionie
+          alignItems: "center", // Wyśrodkowanie w poziomie
+          padding: "20px", // Dodaje odstępy
         }}
       >
         <Typography variant="h4" component="h1" sx={{ marginBottom: "20px" }}>

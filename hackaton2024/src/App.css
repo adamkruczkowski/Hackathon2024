@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%; /* Rozciąga na pełną szerokość */
+  margin: 0; /* Usuwa automatyczne wyśrodkowanie */
+  padding: 0; /* Usuwa domyślny padding */
+  text-align: left; /* (opcjonalnie) zmiana na domyślne wyrównanie */
 }
 
 .logo {
