@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import { TextField, Button, Typography, Box, Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Login = () => {
     password: "",
   });
   const [savedMessage, setSavedMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,10 +32,10 @@ const Login = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width: "100vw", // Zajmuje pełną szerokość ekranu
-        height: "100vh", // Zajmuje pełną wysokość ekranu
+        width: "100vw",
+        height: "100vh",
         padding: "20px",
-        backgroundColor: "#f5f5f5", // Jasne tło
+        backgroundColor: "#f5f5f5",
       }}
     >
       <Typography variant="h4" sx={{ marginBottom: "20px", fontWeight: "bold" }}>
@@ -82,6 +85,31 @@ const Login = () => {
           Zaloguj się
         </Button>
       </form>
+
+      {/* Linki do innych stron */}
+      <Box sx={{ marginTop: "20px", textAlign: "center" }}>
+        <Typography variant="body2">
+          Nie masz konta?{" "}
+          <Link
+            component="button"
+            variant="body2"
+            onClick={() => navigate("/register")}
+            sx={{ textDecoration: "underline", cursor: "pointer", color: "#1976d2" }}
+          >
+            Załóż je tutaj
+          </Link>
+        </Typography>
+        <Typography variant="body2" sx={{ marginTop: "10px" }}>
+          <Link
+            component="button"
+            variant="body2"
+            onClick={() => navigate("/")}
+            sx={{ textDecoration: "underline", cursor: "pointer", color: "#1976d2" }}
+          >
+            Wróć do strony głównej
+          </Link>
+        </Typography>
+      </Box>
     </Box>
   );
 };

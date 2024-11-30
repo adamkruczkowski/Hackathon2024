@@ -18,7 +18,7 @@ const EnterAppPanel = ({ onPanelClick }) => {
     >
       <ButtonBase
         sx={{
-          width: "500px",
+          width: "85git 0px",
           height: "200px",
           margin: "10px",
           display: "flex",
