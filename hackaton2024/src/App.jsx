@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import Navbar from './components/Navbar'
+import EnterPage from './components/EnterPage';
 import PageWithNavbar from './components/PageWithNavbar'
 
 function App() {
-
   return (
-<PageWithNavbar></PageWithNavbar>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<EnterPage />} />
+        
+        <Route path="/page-with-navbar" element={<PageWithNavbar />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
