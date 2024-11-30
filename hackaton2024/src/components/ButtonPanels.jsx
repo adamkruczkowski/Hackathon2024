@@ -36,8 +36,8 @@ const ButtonPanels = () => {
         <ButtonBase
           key={index}
           sx={{
-            width: "300px",
-            height: "200px",
+            width: "350px",
+            height: "500px",
             margin: "10px",
             display: "flex",
             flexDirection: "column",

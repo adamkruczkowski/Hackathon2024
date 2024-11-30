@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar"; // Import navbar z poprzedniego komponentu
 import Box from "@mui/material/Box";
 import ButtonPanels from "./ButtonPanels";
-
+import Footer from "./Footer";
 const PageWithNavbar = () => {
   return (
     <div>
@@ -23,7 +23,9 @@ const PageWithNavbar = () => {
         }}
       >
         <ButtonPanels />
+
       </Box>
+      <Footer></Footer>
     </div>
   );
 };
